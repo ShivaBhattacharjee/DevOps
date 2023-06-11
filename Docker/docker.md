@@ -1,4 +1,4 @@
-## Installation and learning resources
+### <b>Installation and learning resources</b>
 
 <a href="https://docs.docker.com/engine/install/">Install docker</a>
 <br/>
@@ -21,8 +21,7 @@ A container is an isolated environment for your code. This means that a containe
 
 <i>No more  it works on my machine  </i>
 
-### <b>Are docker image and container the same</b>
-A docker image is a snapshot of an environment, and a container actually runs the software.
+
 
 ### <b> How to pull and run docker image</b>
 ``` bash
@@ -60,7 +59,7 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 ```
-### <b> Docker vs Virtual machines </b>
+### <b> Docker and Virtual machines </b>
 <br/>
 <br/>
 <img src="./images/Docker-vs..png">
@@ -87,3 +86,31 @@ Docker Engine, also known as Docker Daemon or Docker runtime, is the core compon
 ### <b>Orchestation</b>
 
 In simple words, orchestration allows us to manage containers, and its usage is prominent in Kubernetes.
+
+### <b>Docker Image and container</b>
+
+A Docker image contains instructions to create a container, whereas a container is a running instance of an application. We can create a Docker image using a Dockerfile, which includes instructions for building the image.
+
+<b>Here is an example of a DockerFIle for a react application made in vite </b>
+
+```
+# Choose a base image with Node.js pre-installed
+FROM node:14-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the entire project to the working directory
+COPY . .
+
+# Install dependencies
+RUN npm i
+
+# Expose the desired port (e.g., 3000 for a Node.js app)
+EXPOSE 3000
+
+# Define the startup command
+CMD ["npm", "run","dev"]
+
+```
+
