@@ -71,6 +71,11 @@ $ docker logs --since 5s container.id
 ```bash 
 $ docker stop container.id
 ```
+### See the SHA-256 hash value of images
+
+```bash
+$ docker images -q --no-trunc
+```
 
 ### List all images
 
@@ -101,4 +106,10 @@ The server will run at http://localhost:3000. This command runs an nginx server 
 
 ```bash
 $ docker commit -m "commit message" image_name
+```
+
+### Building an image
+note:- 0.0.0 is the version of the image you are deploying change it according to the version of the app
+```bash
+$ docker build -t dockerhubusername/imagename:0.0.0:RELEASE .
 ```
