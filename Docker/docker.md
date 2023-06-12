@@ -128,7 +128,14 @@ $ docker commit -m "Commit message" imagename
 
 ### <b>Docker Layers</b>
 A Docker image is built in layers and is an immutable collection of files and directories. The layer ID is calculated using the SHA-256 hash. An image may reuse the same layer that is already pre-installed and used by another image, allowing Docker to save space and time by avoiding redundant downloads of identical images.
+
+Inspecting an image to see the layer
+```bash
+$ docker inspect image.name
+```
 <br/>
 <br/>
 
- ### <i>End of theory lets move towards some docker commands</i>
+ ### <i>End of theory lets move towards some docker 
+ <a href="https://github.com/ShivaBhattacharjee/DevOps/blob/master/Docker/DockerCommands.md"><h2>commands</h2></a></i>
+  <a href="https://github.com/ShivaBhattacharjee/DevOps/blob/master/Docker/DockerFile"><h3>Docker File Example</h3></a></i>

@@ -1,0 +1,32 @@
+# nodejs Docker file
+
+FROM node:alpine-14
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD [ "npm","start" ]
+
+
+# python docker file
+
+FROM python:3.9
+
+WORKDIR /app
+
+COPY requirments.txt ./
+
+RUN pip install --no-cache-dir -r requirments.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["python","app.py"]
