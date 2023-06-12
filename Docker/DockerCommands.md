@@ -77,7 +77,7 @@ or
 $ docker rmi REPOSITORY.name
 ```
 
-### Runing docker image on detatched mode
+### Running docker image on detatched mode
 Note: The "-d" option is used for detached mode, which runs the container in the background. The "-p" option is used to specify the port configuration.It takes two arguments: "3030" is the port you want to expose externally, and "80" is the default port inside the container.
 
 ```bash
