@@ -118,6 +118,16 @@ CMD ["npm", "run","dev"]
 ### <b>Open container Initiative (OCI)</b>
 The Open Container Initiative (OCI) is a group that sets standards for container formats and runtime. These standards ensure that containers can run on different platforms and with different runtimes. Docker is part of the OCI and follows these standards, allowing Docker containers to work well with other OCI-compliant runtimes.
 
+
+### <b>Docker commit</b>
+The "docker commit" command is used to create a new image from changes made to a running container. It allows you to capture the current state of a container and save it as a new image.
+
+```bash
+$ docker commit -m "Commit message" imagename
+```
+
+### <b>Docker Layers</b>
+
 <br/>
 <br/>
 

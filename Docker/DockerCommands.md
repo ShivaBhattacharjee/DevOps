@@ -1,9 +1,12 @@
 ### Pull an image from docker hub 
 
+Note: The version can also be mentioned. If the version isn't specified, it pulls the latest image.
 ```bash
 $ docker pull <image.name>
 
 example:- $ docker pull ubuntu 
+
+specific Version:- $ docker pull ubuntu:16.04
 ```
 
 ### Run an image 
@@ -69,6 +72,11 @@ $ docker logs --since 5s container.id
 $ docker stop container.id
 ```
 
+### List all images
+
+```bash
+$ docker images -q
+```
 ### Remove an image
 
 ```bash
@@ -76,10 +84,21 @@ $ docker rmi image.id
 or
 $ docker rmi REPOSITORY.name
 ```
+### Remove all images 
 
+```bash
+$ docker rmi $(docker images -q) -f
+```
 ### Running docker image on detatched mode
 Note: The "-d" option is used for detached mode, which runs the container in the background. The "-p" option is used to specify the port configuration.It takes two arguments: "3030" is the port you want to expose externally, and "80" is the default port inside the container.
 
 ```bash
-$ docker run -d -p 3030:80 nginx
+$ docker run -d -p 3000:80 nginx
+```
+The server will run at http://localhost:3000. This command runs an nginx server without the need for installing anything directly by using Docker.
+
+### Commiting messages inside images
+
+```bash
+$ docker commit -m "commit message" image_name
 ```
