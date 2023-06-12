@@ -69,14 +69,15 @@ VMs have the host OS and guest OS inside each VM. A guest OS can be any OS, like
 
 ### <b>Docker run time</b>
 
-Runtime allows to start and stop containers 
-There are two types of runtime
+There are multiple container runtimes available for running Docker containers. Here are some of the popular container runtimes used with Docker:
 <li>Runc</li>
 It lies in a lower-level runtime and operates with the operating system to start and stop the containers.
 
 <li>Containerd</li>
 Containerd is a higher-level runtime that manages container lifecycles, including creation, execution, and termination. It handles container and image management, executes containers using low-level runtimes like runc, enforces security and isolation, and provides an interface for higher-level runtimes like Docker to interact with container operations.
 
+<li>CRI-O</li>
+CRI-0 is a lightweight container runtime specifically designed for running containers with Kubernetes. It implements the Kubernetes Container Runtime Interface (CRI) and focuses on providing a minimalistic runtime with Kubernetes-specific features.
 <br/>
 
 ### <b>Docker Engine</b>
@@ -114,3 +115,10 @@ CMD ["npm", "run","dev"]
 
 ```
 
+### <b>Open container Initiative (OCI)</b>
+The Open Container Initiative (OCI) is a group that sets standards for container formats and runtime. These standards ensure that containers can run on different platforms and with different runtimes. Docker is part of the OCI and follows these standards, allowing Docker containers to work well with other OCI-compliant runtimes.
+
+<br/>
+<br/>
+
+ ### <i>End of theory lets move towards some docker commands</i>
