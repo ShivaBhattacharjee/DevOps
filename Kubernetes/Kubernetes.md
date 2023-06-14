@@ -6,23 +6,28 @@
 
 [Kunal Kushwaha](https://www.youtube.com/watch?v=KVBON1lA9N8&t=781s)
 
-[Hitesh Choudouray]( )
+[Hitesh Choudouray]()
+
+### <b>What is kubernetes</b>
+Kubernetes is an open-source container orchestration system for automating software deployment, scaling, and management. Originally designed by Google, the project is now maintained by the Cloud Native Computing Foundation
+
 ### <b> Configuration management </b>
 Configuration management in the context of Kubernetes refers to the management of configuration settings and resources within a Kubernetes cluster using software tools and practices. Kubernetes itself provides native mechanisms for managing configurations, but additional tools can be used to enhance the configuration management process.
 
-Here are some key aspects of configuration management in Kubernetes:
 
-1. **Declarative Configuration**: Kubernetes uses a declarative approach to define the desired state of your infrastructure. You describe the desired configuration of your cluster, including deployments, services, volumes, and other resources, in YAML or JSON manifests.
 
-2. **Kubernetes Config Files**: Kubernetes config files are used to define and manage the configuration of Kubernetes resources. These files contain specifications for pods, deployments, services, ingress rules, and more. They define the desired state of the resources and can be version controlled and managed as code.
+### <b>Managing containers</b>
+* <b>Monolithic containers</b>
+    
+    Monolithic applications are traditional software applications that are built as a single, indivisible unit. In a monolithic architecture, all the components of the application, such as the user interface, business logic, and data access layers, are tightly coupled and run as a single process or application. While it is relatively easy to deploy, one drawback is that if any changes are made, the entire code needs to be deployed again. For example, if we scale the business logic, we also need to scale other components like the user interface.
 
-3. **Configuration Repositories**: Configuration management in Kubernetes often involves storing configuration files in version control systems like Git. This enables tracking changes, collaboration, and managing different environments or clusters with different configurations.
+ * <b>Micro services</b>
+  
+    Microservices architecture is an approach to software development in which a large application is divided into smaller, independent services. Each service has its own res`ponsibility and can be developed, deployed, and scaled independently. These services communicate with each other through well-defined APIs, typically utilizing lightweight protocols like HTTP or messaging systems. The adoption of microservices brings several advantages, including enhanced flexibility, scalability, and fault isolation. Consequently, it allows for scaling individual components without impacting other components.
 
-4. **Configuration Templates**: Tools like Helm can be used to manage Kubernetes configuration templates. Helm allows you to define reusable and parameterized templates for creating Kubernetes resources. This simplifies the management of complex configurations and promotes code reuse.
+ * <b>Service Mesh</b>
+  
+    A service mesh is a dedicated infrastructure layer that handles communication between services in a microservices architecture. It provides capabilities such as service-to-service communication, load balancing, service discovery, encryption, authentication, and observability
 
-5. **Configuration Validation**: Kubernetes provides mechanisms for validating configurations before applying them to the cluster. Tools like kubeval or kube-score can be used to validate Kubernetes manifests against best practices, ensuring that the configurations are correct and conform to recommended guidelines.
-
-6. **Configuration Deployment**: Configuration management tools can help automate the deployment of Kubernetes configurations. Tools like kubectl, kustomize, or deployment pipelines can be used to apply and update configurations in a controlled manner, ensuring consistency and minimizing errors.
-
-7. **Secrets Management**: Configuration management also includes managing sensitive information, such as API keys, passwords, and certificates, as Kubernetes secrets. Tools like Vault or Kubernetes-native secrets management can be used to securely store and manage these secrets within the cluster.
-
+### <b>Orchestrators</b>
+Orchestrators play a crucial role in dynamically deploying and managing applications. They have the capability to upscale containers, automatically heal them in the event of failures, and enable seamless scaling and real-time updates without any downtime.
