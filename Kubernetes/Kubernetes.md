@@ -40,3 +40,22 @@ Orchestrators play a crucial role in dynamically deploying and managing applicat
      *  Master Node: The master node is responsible for managing the cluster and making global decisions. It controls the scheduling and deployment of containers, monitors the health of nodes and containers, and manages scaling and load balancing. The master node runs components such as the Kubernetes API server, the controller manager, the scheduler, and etcd (a distributed key-value store for storing cluster state).
     
       * Worker Nodes: Worker nodes are the machines where containers are deployed and run. Each worker node has a container runtime, such as Docker or containerd, installed on it. These nodes communicate with the master node to receive instructions on which containers to run and how to manage them.
+
+## <b>Kubectl</b>
+   Kubectl is a command-line interface (CLI) tool used to interact with Kubernetes clusters. It is the primary tool for managing and controlling Kubernetes clusters from the command line. Kubectl allows you to perform various operations such as creating, inspecting, updating, and deleting Kubernetes resources.
+
+   Kubectl can be interacted with two ways
+
+   Declarative Approach: In the declarative approach, you define the desired state of the Kubernetes resources in a configuration file, typically written in YAML or JSON format. You use kubectl to apply the configuration file to the cluster, and Kubernetes will make the necessary changes to ensure that the actual state matches the desired state.
+   For example, you can define a Deployment in a YAML file specifying the number of replicas, container image, ports, and other configuration options. Then, you apply this configuration using kubectl:
+
+  ``` bash
+   kubectl apply -f deployment.yaml
+   ```
+
+   Imperative Approach: In the imperative approach, you use kubectl commands directly to perform actions on the cluster without using configuration files. You provide specific instructions to kubectl on what actions to take.
+
+   For example, you can run the following command to create a Deployment imperatively:
+   ```bash
+   kubectl create deployment my-deployment --image=my-container-image
+   ```
