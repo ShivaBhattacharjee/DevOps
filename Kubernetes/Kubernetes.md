@@ -33,7 +33,8 @@ Configuration management in the context of Kubernetes refers to the management o
 Orchestrators play a crucial role in dynamically deploying and managing applications. They have the capability to upscale containers, automatically heal them in the event of failures, and enable seamless scaling and real-time updates without any downtime.
 
 
-### <b> Architecture of kubernetes</b>
+### <b>Some terminology</b>
+   Note: A control plane which was knows was master plane manager kubernetes cluster
    * Cluster: A Kubernetes cluster is a group of servers, called nodes, that work together to run containerized applications. Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides a framework for abstracting away the underlying infrastructure and allows developers to focus on the application logic rather than the operational details.
    In a Kubernetes cluster, there are two main types of nodes:
 
@@ -46,16 +47,19 @@ Orchestrators play a crucial role in dynamically deploying and managing applicat
 
    Kubectl can be interacted with two ways
 
-   Declarative Approach: In the declarative approach, you define the desired state of the Kubernetes resources in a configuration file, typically written in YAML or JSON format. You use kubectl to apply the configuration file to the cluster, and Kubernetes will make the necessary changes to ensure that the actual state matches the desired state.
+   * Declarative Approach: In the declarative approach, you define the desired state of the Kubernetes resources in a configuration file, typically written in YAML or JSON format. You use kubectl to apply the configuration file to the cluster, and Kubernetes will make the necessary changes to ensure that the actual state matches the desired state.
    For example, you can define a Deployment in a YAML file specifying the number of replicas, container image, ports, and other configuration options. Then, you apply this configuration using kubectl:
 
-  ``` bash
-   kubectl apply -f deployment.yaml
-   ```
+      ``` bash
+      kubectl apply -f deployment.yaml
+      ```
 
-   Imperative Approach: In the imperative approach, you use kubectl commands directly to perform actions on the cluster without using configuration files. You provide specific instructions to kubectl on what actions to take.
-
+   * Imperative Approach: In the imperative approach, you use kubectl commands directly to perform actions on the cluster without using configuration files. You provide specific instructions to kubectl on what actions to take.
    For example, you can run the following command to create a Deployment imperatively:
-   ```bash
-   kubectl create deployment my-deployment --image=my-container-image
-   ```
+      ```bash
+      kubectl create deployment my-deployment --image=my-container-image
+      ```
+
+### <b>Pods in kubernetes</b>
+In Kubernetes, a Pod is the smallest and most basic unit of deployment. It represents a single instance of a running process in a cluster. A Pod encapsulates one or more containers, along with shared resources such as storage volumes, IP address, and environment variables.
+Pods are used to deploy and manage containerized applications in Kubernetes. They provide an abstraction layer that allows you to run and scale your containers within the cluster. Each Pod in Kubernetes has a unique IP address and shares the same network namespace, which means all containers within a Pod can communicate with each other using localhost.
