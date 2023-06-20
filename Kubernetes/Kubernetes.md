@@ -98,3 +98,35 @@ When a new pod is created or when an existing pod needs to be rescheduled (e.g.,
    * Custom Scheduling Preferences: Administrators can define custom scheduling preferences using configuration options or custom plugins to influence the scheduling decisions based on specific requirements or policies.
 
 The scheduler operates in a continuous loop, constantly monitoring the cluster for unscheduled pods and making decisions to assign them to appropriate nodes. Once a suitable node is selected, the scheduler updates the pod's assignment in the Kubernetes API server, and the kubelet on the assigned node takes care of launching and managing the pod.
+
+###<b>Kube Proxy</b>
+
+Kube-proxy is a network proxy and load balancer in Kubernetes that runs on each node in the cluster. Its primary purpose is to handle network connectivity and routing for services in the cluster.
+
+Here are the key functions of kube-proxy:
+
+   * Service Proxy: Kube-proxy acts as a proxy for Kubernetes services. It watches the Kubernetes API server for changes in the service configuration and ensures that network traffic to services is correctly forwarded to the appropriate backend pods. It sets up the necessary IP routing rules to enable communication between clients and service endpoints.
+
+   * Load Balancing: Kube-proxy distributes incoming traffic across multiple pods that belong to a service, providing load balancing functionality. It uses various load balancing algorithms, such as round-robin, to evenly distribute requests among the available pods. This helps to distribute the workload and improve the overall performance and availability of the service.
+
+   * IP Tables or IPVS Modes: Kube-proxy can operate in different modes depending on the underlying network implementation and configuration. In the IP Tables mode, it configures IP tables rules on each node to redirect traffic to the appropriate backend pods. In the IPVS (IP Virtual Server) mode, kube-proxy uses the IPVS kernel module for more efficient load balancing and network traffic handling.
+
+   * Service Discovery: Kube-proxy maintains a local cache of service endpoints and their associated pods. This allows it to quickly route traffic to the correct pod without the need for querying the Kubernetes API server for every request. The cache is updated periodically or whenever changes to services occur.
+
+   * Health Checking: Kube-proxy periodically checks the health of backend pods associated with a service. If a pod becomes unhealthy or goes offline, kube-proxy removes it from the pool of available endpoints, ensuring that traffic is not routed to it until it becomes healthy again.
+
+   * High Availability: Kube-proxy supports high availability by running in a distributed mode or using tools like keepalived to ensure that proxy functionality is available even if a node fails. In this way, it helps to maintain the availability of services in the cluster.
+
+### <b> K8s dns</b>
+In Kubernetes, DNS (Domain Name System) is a built-in service that provides name resolution for resources within the cluster. It allows you to refer to other Kubernetes objects by their names instead of using IP addresses, making it easier to manage and communicate between different components of your applications.
+    DNS Resolution: Each Kubernetes cluster has a DNS server, typically running as a Kubernetes service named "kube-dns" or "coredns." This DNS server provides name resolution services for the cluster.
+
+   * Service Discovery: When you create a Kubernetes service, a DNS record is automatically created for that service. The DNS record includes the service name and a namespace-specific domain name. For example, if you have a service named "my-service" in the "my-namespace" namespace, its DNS name would be "my-service.my-namespace.svc.cluster.local".
+
+   * Pod DNS Names: Every pod in the cluster is assigned a hostname that follows the format "pod-name.pod-namespace.pod.cluster.local." Pods can resolve the DNS names of other pods within the same cluster using these hostnames.
+
+   * DNS Caching: To optimize performance, DNS responses are cached by the kube-dns or CoreDNS service. This helps reduce the number of DNS queries made to the DNS server for repeated requests.
+
+   * Cluster Domain: By default, the cluster domain is set to "cluster.local." This domain is appended to the DNS names for services and pods in the cluster. However, you can configure a different cluster domain if desired.
+
+   * External DNS Resolution: Kubernetes DNS also supports external DNS resolution. This means that pods can resolve DNS names of external resources, such as external services or endpoints outside the cluster, as long as the DNS server used by the cluster can resolve those names.
