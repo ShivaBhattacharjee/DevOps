@@ -66,4 +66,35 @@ In Kubernetes, a Pod is the smallest and most basic unit of deployment. It repre
 Pods are used to deploy and manage containerized applications in Kubernetes. They provide an abstraction layer that allows you to run and scale your containers within the cluster. Each Pod in Kubernetes has a unique IP address and shares the same network namespace, which means all containers within a Pod can communicate with each other using localhost.We run containers inside pod we can run each application in one pod or multiple application in one pod
 
 ### <b>Controller Manager</b>
-The Kubernetes controller manager is a daemon that embeds the core control loops shipped with Kubernetes. In applications of robotics and automation, a control loop is a non-terminating loop that regulates the state of the system. In Kubernetes, a controller is a control loop that watches the shared state of the cluster through the apiserver and makes changes attempting to move the current state towards the desired state. Examples of controllers that ship with Kubernetes today are the replication controller, endpoints controller, namespace controller, and serviceaccounts controller.
+The Controller Manager is a component of Kubernetes that manages various controllers responsible for maintaining the desired state of the system. One of the primary responsibilities of the Controller Manager is to manage the control loops for running containers inside pods. These control loops ensure that the actual state of the system matches the desired state specified by the user or the system.
+
+The Controller Manager typically performs the following four functionalities:
+
+   * Desired State: The Controller Manager continuously monitors the desired state of the system, as specified by the user or the system itself. It keeps track of the desired number of pods, their configuration, and other relevant parameters.
+   
+   * Current State: The Controller Manager also monitors the current state of the system by interacting with the Kubernetes API server. It retrieves information about the existing pods, their status, and other relevant details.
+
+   * Differences: By comparing the desired state with the current state, the Controller Manager determines any differences or discrepancies that exist. It identifies pods that need to be created, updated, or deleted to align the current state with the desired state.
+
+   * Making Changes: Once the differences are identified, the Controller Manager takes the necessary actions to make the required changes. It creates new pods, updates existing ones, or terminates pods that are no longer required. It interacts with the Kubernetes API server to perform these operations and ensures that the system converges towards the desired state.
+
+### <b>Scheduler</b>
+In Kubernetes, the scheduler is a core component responsible for assigning pods to nodes in the cluster. Its primary function is to ensure that pods are scheduled onto appropriate nodes based on resource requirements, node capacity, and various other constraints.
+
+When a new pod is created or when an existing pod needs to be rescheduled (e.g., due to node failure or scaling operations), the scheduler evaluates the available nodes and selects the most suitable node for the pod to run on. The scheduling process takes into consideration several factors, including:
+
+   * Resource Requirements: The scheduler considers the CPU and memory requests and limits specified for the pod. It looks for nodes with sufficient available resources to accommodate the pod's requirements.
+
+   * Node Affinity and Anti-affinity: Node affinity allows pods to be scheduled on nodes based on labels or node selectors. It enables requirements like running specific pods on nodes with certain hardware or in specific regions. Anti-affinity, on the other hand, allows for pod spreading across nodes to achieve fault tolerance.
+
+   * Pod Interference: The scheduler takes into account whether the pod has any affinity or anti-affinity requirements with other running pods to avoid placing them on the same node, ensuring better performance and fault tolerance.
+
+   * Taints and Tolerations: Nodes can be "tainted" to indicate certain limitations or restrictions. Pods can specify "tolerations" to indicate that they can tolerate being scheduled on tainted nodes, allowing for specialized or isolated nodes in the cluster.
+
+   * Node Capacity and Utilization: The scheduler considers the capacity and utilization of nodes in the cluster to distribute pods evenly and avoid resource imbalances.
+
+   * Quality of Service Requirements: Pods can have different quality of service classes, such as Guaranteed, Burstable, or BestEffort. The scheduler takes these classes into account while making scheduling decisions.
+
+   * Custom Scheduling Preferences: Administrators can define custom scheduling preferences using configuration options or custom plugins to influence the scheduling decisions based on specific requirements or policies.
+
+The scheduler operates in a continuous loop, constantly monitoring the cluster for unscheduled pods and making decisions to assign them to appropriate nodes. Once a suitable node is selected, the scheduler updates the pod's assignment in the Kubernetes API server, and the kubelet on the assigned node takes care of launching and managing the pod.
