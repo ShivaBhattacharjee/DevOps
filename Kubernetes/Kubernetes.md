@@ -38,11 +38,11 @@ Orchestrators play a crucial role in dynamically deploying and managing applicat
    * Cluster: A Kubernetes cluster is a group of servers, called nodes, that work together to run containerized applications. Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides a framework for abstracting away the underlying infrastructure and allows developers to focus on the application logic rather than the operational details.
    In a Kubernetes cluster, there are two main types of nodes:
 
-     *  Master Node: The master node is responsible for managing the cluster and making global decisions. It controls the scheduling and deployment of containers, monitors the health of nodes and containers, and manages scaling and load balancing. The master node runs components such as the Kubernetes API server, the controller manager, the scheduler, and etcd (a distributed key-value store for storing cluster state).
+     *  Master Node / Control plane: The master node or control plane is responsible for managing the cluster and making global decisions. It controls the scheduling and deployment of containers, monitors the health of nodes and containers, and manages scaling and load balancing. The master node runs components such as the Kubernetes API server, the controller manager, the scheduler, and etcd (a distributed key-value store for storing cluster state).
     
       * Worker Nodes: Worker nodes are the machines where containers are deployed and run. Each worker node has a container runtime, such as Docker or containerd, installed on it. These nodes communicate with the master node to receive instructions on which containers to run and how to manage them.
 
-## <b>Kubectl</b>
+### <b>Kubectl</b>
    Kubectl is a command-line interface (CLI) tool used to interact with Kubernetes clusters. It is the primary tool for managing and controlling Kubernetes clusters from the command line. Kubectl allows you to perform various operations such as creating, inspecting, updating, and deleting Kubernetes resources.
 
    Kubectl can be interacted with two ways
@@ -56,10 +56,14 @@ Orchestrators play a crucial role in dynamically deploying and managing applicat
 
    * Imperative Approach: In the imperative approach, you use kubectl commands directly to perform actions on the cluster without using configuration files. You provide specific instructions to kubectl on what actions to take.
    For example, you can run the following command to create a Deployment imperatively:
+
       ```bash
       kubectl create deployment my-deployment --image=my-container-image
       ```
 
 ### <b>Pods in kubernetes</b>
 In Kubernetes, a Pod is the smallest and most basic unit of deployment. It represents a single instance of a running process in a cluster. A Pod encapsulates one or more containers, along with shared resources such as storage volumes, IP address, and environment variables.
-Pods are used to deploy and manage containerized applications in Kubernetes. They provide an abstraction layer that allows you to run and scale your containers within the cluster. Each Pod in Kubernetes has a unique IP address and shares the same network namespace, which means all containers within a Pod can communicate with each other using localhost.
+Pods are used to deploy and manage containerized applications in Kubernetes. They provide an abstraction layer that allows you to run and scale your containers within the cluster. Each Pod in Kubernetes has a unique IP address and shares the same network namespace, which means all containers within a Pod can communicate with each other using localhost.We run containers inside pod we can run each application in one pod or multiple application in one pod
+
+### <b>Controller Manager</b>
+The Kubernetes controller manager is a daemon that embeds the core control loops shipped with Kubernetes. In applications of robotics and automation, a control loop is a non-terminating loop that regulates the state of the system. In Kubernetes, a controller is a control loop that watches the shared state of the cluster through the apiserver and makes changes attempting to move the current state towards the desired state. Examples of controllers that ship with Kubernetes today are the replication controller, endpoints controller, namespace controller, and serviceaccounts controller.
