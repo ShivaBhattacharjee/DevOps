@@ -34,7 +34,7 @@ Orchestrators play a crucial role in dynamically deploying and managing applicat
 
 
 ### <b>Some terminology</b>
-   Note: A control plane which was knows was master plane manager kubernetes cluster
+   Note: A control plane which was knows as master node manages kubernetes cluster
    * Cluster: A Kubernetes cluster is a group of servers, called nodes, that work together to run containerized applications. Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides a framework for abstracting away the underlying infrastructure and allows developers to focus on the application logic rather than the operational details.
    In a Kubernetes cluster, there are two main types of nodes:
 
