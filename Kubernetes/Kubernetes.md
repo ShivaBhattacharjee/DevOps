@@ -40,7 +40,7 @@ Orchestrators play a crucial role in dynamically deploying and managing applicat
 
      *  Master Node / Control plane: The master node or control plane is responsible for managing the cluster and making global decisions. It controls the scheduling and deployment of containers, monitors the health of nodes and containers, and manages scaling and load balancing. The master node runs components such as the Kubernetes API server, the controller manager, the scheduler, and etcd (a distributed key-value store for storing cluster state).
     
-      * Worker Nodes: Worker nodes are the machines where containers are deployed and run. Each worker node has a container runtime, such as Docker or containerd, installed on it. These nodes communicate with the master node to receive instructions on which containers to run and how to manage them.
+      * Worker Nodes: Wo rker nodes are the machines where containers are deployed and run. Each worker node has a container runtime, such as Docker or containerd, installed on it. These nodes communicate with the master node to receive instructions on which containers to run and how to manage them.
 
 ### <b>Kubectl</b>
    Kubectl is a command-line interface (CLI) tool used to interact with Kubernetes clusters. It is the primary tool for managing and controlling Kubernetes clusters from the command line. Kubectl allows you to perform various operations such as creating, inspecting, updating, and deleting Kubernetes resources.
@@ -99,7 +99,7 @@ When a new pod is created or when an existing pod needs to be rescheduled (e.g.,
 
 The scheduler operates in a continuous loop, constantly monitoring the cluster for unscheduled pods and making decisions to assign them to appropriate nodes. Once a suitable node is selected, the scheduler updates the pod's assignment in the Kubernetes API server, and the kubelet on the assigned node takes care of launching and managing the pod.
 
-###<b>Kube Proxy</b>
+### <b>Kube Proxy</b>
 
 Kube-proxy is a network proxy and load balancer in Kubernetes that runs on each node in the cluster. Its primary purpose is to handle network connectivity and routing for services in the cluster.
 
