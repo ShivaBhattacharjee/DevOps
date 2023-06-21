@@ -130,3 +130,4 @@ In Kubernetes, DNS (Domain Name System) is a built-in service that provides name
    * Cluster Domain: By default, the cluster domain is set to "cluster.local." This domain is appended to the DNS names for services and pods in the cluster. However, you can configure a different cluster domain if desired.
 
    * External DNS Resolution: Kubernetes DNS also supports external DNS resolution. This means that pods can resolve DNS names of external resources, such as external services or endpoints outside the cluster, as long as the DNS server used by the cluster can resolve those names.
+
