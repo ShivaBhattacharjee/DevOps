@@ -131,3 +131,22 @@ In Kubernetes, DNS (Domain Name System) is a built-in service that provides name
 
    * External DNS Resolution: Kubernetes DNS also supports external DNS resolution. This means that pods can resolve DNS names of external resources, such as external services or endpoints outside the cluster, as long as the DNS server used by the cluster can resolve those names.
 
+### <b>Minikube</b>
+
+Minikube is a tool used to run a single-node Kubernetes (K8s) cluster locally on your machine. It is designed to simplify the setup and testing of Kubernetes applications in a development or learning environment.
+
+Minikube creates a virtual machine on your local system and deploys a minimal Kubernetes cluster inside it. This allows you to interact with and manage the cluster using the kubectl command-line tool just as you would with a full-scale Kubernetes cluster.
+
+Minikube provides a lightweight and convenient way to experiment with Kubernetes features and workflows without the need for a complex multi-node cluster. It enables developers to develop and test their applications locally before deploying them to a production Kubernetes environment.
+
+Some key features of Minikube include:
+
+   * Single-node cluster: Minikube runs a single-node Kubernetes cluster on your local machine, allowing you to test and experiment with Kubernetes features.
+
+   * Isolation: Minikube creates an isolated environment for your cluster, ensuring that the local setup does not interfere with any existing Kubernetes deployments.
+
+   * Easy setup: Minikube simplifies the setup process by automatically configuring the required components, such as the Kubernetes API server, container runtime, and networking.
+
+   * Cluster management: Minikube provides commands to start, stop, and delete the local Kubernetes cluster. It also offers options to configure cluster parameters such as CPU, memory, and Kubernetes version.
+
+   * Add-on support: Minikube supports various Kubernetes add-ons, such as an ingress controller, dashboard, metrics server, and more. These add-ons enhance the functionality of your local cluster.
