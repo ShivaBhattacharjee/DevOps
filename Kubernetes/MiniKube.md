@@ -19,3 +19,15 @@ $ minikube status
 ```bash
 $ kubectl get pods
 ```
+
+### <b>Check nodes</b>
+
+```bash
+$ kubectl get nodes
+```
+
+### <b>K8S dashboard</b>
+
+```
+$ minikube dashboard
+```
