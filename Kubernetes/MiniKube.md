@@ -1,0 +1,1 @@
+#### In Minikube, a Kubernetes cluster is composed of one VM. A cloud is composed of one or more VM(s)

@@ -150,3 +150,5 @@ Some key features of Minikube include:
    * Cluster management: Minikube provides commands to start, stop, and delete the local Kubernetes cluster. It also offers options to configure cluster parameters such as CPU, memory, and Kubernetes version.
 
    * Add-on support: Minikube supports various Kubernetes add-ons, such as an ingress controller, dashboard, metrics server, and more. These add-ons enhance the functionality of your local cluster.
+
+ [MiniKube Commands](https://github.com/ShivaBhattacharjee/DevOps/blob/master/Kubernetes/MiniKube.md)
