@@ -69,7 +69,7 @@ VMs have the host OS and guest OS inside each VM. A guest OS can be any OS, like
 
 ### <b>Docker run time</b>
 
-There are multiple container runtimes available for running Docker containers. Here are some of the popular container runtimes used with Docker:
+A Docker runtime is a low-level software component that creates and manages Docker containers. It is responsible for starting and stopping containers, managing their resources, and providing them with access to the host system..There are multiple container runtimes available for running Docker containers. Here are some of the popular container runtimes used with Docker:
 <li>Runc</li>
 It lies in a lower-level runtime and operates with the operating system to start and stop the containers.
 
@@ -94,7 +94,7 @@ A Docker image contains instructions to create a container, whereas a container 
 
 <b>Here is an example of a DockerFIle for a react application made in vite </b>
 
-```
+``` bash
 # Choose a base image with Node.js pre-installed
 FROM node:14-alpine
 
