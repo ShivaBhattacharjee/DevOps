@@ -57,3 +57,9 @@ Note: A Kubernetes context is a group of access parameters that define which clu
 ```bash
 $ kubectl config current-context
 ```
+
+### <b>Get deployments</b>
+
+```bash
+$ kubectl get deployments
+```
