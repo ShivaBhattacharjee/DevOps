@@ -51,7 +51,7 @@ $ kubectl config view
 ```
 
 ### <b>Get Current-Context</b>
-Note: A Kubernetes context is a group of access parameters that define which cluster you're interacting with, which user you're using, and which namespace you're working in. It's helpful if you need to access different clusters for different purposes or if you want to limit your access to certain parts of a cluster.3
+Note: A Kubernetes context is a group of access parameters that define which cluster you're interacting with, which user you're using, and which namespace you're working in. It's helpful if you need to access different clusters for different purposes or if you want to limit your access to certain parts of a cluster.
 
 ```bash
 $ kubectl config current-context
