@@ -41,6 +41,7 @@ $ minikube docker-env
 
 ```bash
 $ minikube ssh
+
 $ docker ps
 ```
 
