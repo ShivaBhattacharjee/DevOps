@@ -12,11 +12,19 @@ $ minikube start
 ```bash
 $ minikube status
 ```
-
+### <b>Get all </b>
+```bash
+$ kubectl get all
+```
 ### <b>Get pods</b>
 
 ```bash
 $ kubectl get pods
+```
+### <b>Get deployments</b>
+
+```bash
+$ kubectl get deployments
 ```
 
 ### <b>Check nodes</b>
@@ -58,8 +66,7 @@ Note: A Kubernetes context is a group of access parameters that define which clu
 $ kubectl config current-context
 ```
 
-### <b>Get deployments</b>
-
+### <b>Delete pods</b>
 ```bash
-$ kubectl get deployments
+$ kubectl delete pod <pod_name>
 ```
