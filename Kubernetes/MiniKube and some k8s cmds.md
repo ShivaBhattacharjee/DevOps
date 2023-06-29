@@ -12,6 +12,11 @@ $ minikube start
 ```bash
 $ minikube status
 ```
+#### <b>Get kubectl cluster info</b>
+
+```bash
+$ kubectl cluster-info
+```
 ### <b>Get all </b>
 ```bash
 $ kubectl get all
@@ -20,6 +25,17 @@ $ kubectl get all
 
 ```bash
 $ kubectl get pods
+```
+
+### <b>Get namespaces</b>
+note: In Kubernetes (K8s), namespaces are a way to logically partition and isolate resources within a cluster.Resources in one namespace are usually not aware of or accessible to resources in other namespaces.
+
+```bash
+$ kubectl get namespaces
+```
+### <b>Get pods inside a namespace</b>
+```bash
+$ kubectl get pods --namespace= namespace-name
 ```
 ### <b>Get deployments</b>
 
