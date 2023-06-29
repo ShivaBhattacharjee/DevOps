@@ -151,4 +151,4 @@ Some key features of Minikube include:
 
    * Add-on support: Minikube supports various Kubernetes add-ons, such as an ingress controller, dashboard, metrics server, and more. These add-ons enhance the functionality of your local cluster.
 
- [MiniKube Commands](https://github.com/ShivaBhattacharjee/DevOps/blob/master/Kubernetes/MiniKube.md)
+ [MiniKube Commands](https://github.com/ShivaBhattacharjee/DevOps/blob/master/Kubernetes/MiniKube%20and%20some%20k8s%20cmds.md)
