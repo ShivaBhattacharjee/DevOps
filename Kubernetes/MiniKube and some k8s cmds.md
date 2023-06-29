@@ -86,3 +86,17 @@ $ kubectl config current-context
 ```bash
 $ kubectl delete pod <pod_name>
 ```
+
+
+### <b>Create pods</b>
+Note: here run nginx mean name of the image and image=nginx means the image that 
+is to be pulled from docker hub
+```bash
+$ kubectl run nginx image=nginx
+```
+
+### <b>Get pods information</b>
+
+```bash
+$ kubectl describe pods <pod.name>
+```
