@@ -111,7 +111,7 @@ $ docker commit -m "commit message" image_name
 ### Building an image
 note:- 0.0.0 is the version of the image you are deploying change it according to the version of the app
 ```bash
-$ docker build -t dockerhubusername/imagename:0.0.0-RELEASE .
+$ docker build -t dockerhubusername/imagename:0.0.0.RELEASE .
 ```
 
 ### Filter image inside a running container
