@@ -8,3 +8,4 @@
 
 * [Kubernetes](https://github.com/shivabhattacharjee/devops/blob/Kubernetes/Kubernetes.md)
   * [Notes and resources](https://github.com/ShivaBhattacharjee/DevOps/blob/master/Kubernetes/Kubernetes.md)
+  * [k8s commands](https://github.com/ShivaBhattacharjee/DevOps/blob/master/Kubernetes/MiniKube%20and%20some%20k8s%20cmds.md)

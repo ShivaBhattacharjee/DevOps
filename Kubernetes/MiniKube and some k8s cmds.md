@@ -123,3 +123,13 @@ note:- To reduce or even increase replicas change the value of replicas
 ```bash
 $ kubectl scale deployment <deployment.name> --replicas=5
 ```
+
+### <b>Get services</b>
+Note: In k8s we have to create services to connect to specific deployment using specific ip address
+```bash
+$ kubectl get services 
+```
+### <b>Create k8s services</b>
+```bash
+$ kubectl expose deployment <deployment.name> --port=8080 --target-port=80
+```
