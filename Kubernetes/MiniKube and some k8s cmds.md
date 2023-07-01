@@ -100,3 +100,20 @@ $ kubectl run nginx --image=nginx
 ```bash
 $ kubectl describe pods <pod.name>
 ```
+
+#### <b>Get pods ip address </b>
+```bash
+$ kubectl get pods -o wide
+```
+
+#### <b>Create scaleable pods using deployment</b>
+
+```bash
+$ kubectl create deployment <deployment.name> --image=<image.tobepulled>
+```
+
+#### <b>Describle deployments</b>
+
+```bash
+$ kubectl describe deployment <deployment.name>
+```

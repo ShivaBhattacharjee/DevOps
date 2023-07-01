@@ -114,3 +114,8 @@ note:- 0.0.0 is the version of the image you are deploying change it according t
 $ docker build -t dockerhubusername/imagename:0.0.0:RELEASE .
 ```
 
+### Filter image inside a running container
+
+```bash
+$ docker exec <container.id> | greb <image.name> 
+```
