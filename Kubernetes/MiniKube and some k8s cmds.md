@@ -112,14 +112,14 @@ $ kubectl get pods -o wide
 $ kubectl create deployment <deployment.name> --image=<image.tobepulled>
 ```
 
-### <b>Describle deployments</b>
+### <b>Describe deployments</b>
 
 ```bash
 $ kubectl describe deployment <deployment.name>
 ```
 
 ### <b>Scale deployment replicas</b>
-
+note:- To reduce or even increase replicas change the value of replicas
 ```bash
 $ kubectl scale deployment <deployment.name> --replicas=5
 ```
