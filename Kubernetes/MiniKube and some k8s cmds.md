@@ -125,7 +125,7 @@ $ kubectl scale deployment <deployment.name> --replicas=5
 ```
 
 ### <b>Get services</b>
-Note: In k8s we have to create services to connect to specific deployment using specific ip address
+Note: As pods are created, terminated, or scaled, their IP addresses can change dynamically. Services provide a consistent DNS name or IP address that clients can use to access the pods, regardless of their current IP addresses. This simplifies the task of discovering and connecting to the appropriate pods.
 ```bash
 $ kubectl get services 
 ```
