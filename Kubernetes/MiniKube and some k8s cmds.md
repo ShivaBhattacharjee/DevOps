@@ -133,3 +133,8 @@ $ kubectl get services
 ```bash
 $ kubectl expose deployment <deployment.name> --port=8080 --target-port=80
 ```
+### <b>Exposing services using NodePort</b>
+Node:-NodePort is a type of service that exposes an application running inside a cluster to the outside world.
+```bash
+$ kubectl expose deployment <Pod.name> --type=NodePort --port=Your port --target-port=portnumber
+```
