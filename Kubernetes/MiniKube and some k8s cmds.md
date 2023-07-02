@@ -107,7 +107,7 @@ $ kubectl get pods -o wide
 ```
 
 ### <b>Create scaleable pods using deployment</b>
-
+note:- Its imperative appraoch not declarative (not used in actual production)
 ```bash
 $ kubectl create deployment <deployment.name> --image=<image.tobepulled>
 ```
