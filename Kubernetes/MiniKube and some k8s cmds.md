@@ -137,4 +137,20 @@ $ kubectl expose deployment <deployment.name> --port=8080 --target-port=80
 Node:-NodePort is a type of service that exposes an application running inside a cluster to the outside world.
 ```bash
 $ kubectl expose deployment <Pod.name> --type=NodePort --port=Your port --target-port=portnumber
+
+```
+### <b>Get NodePort url</b>
+```bash
+$ minikube service <pod.name>  --url
+
+to start directly
+
+
+$ minikube service <pod.name>
+```
+
+### <b>Create Load balancer services </b>
+
+```bash
+$ kubectl expose deployment <pod.name> --type=LoadBalancer --port=your port --target-port=port
 ```
